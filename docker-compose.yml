@@ -27,6 +27,7 @@ services:
     volumes:
       - ./prestashop:/app/prestashop
       - ./wordpress:/app/wordpress
+      - ./apache/www.conf:/etc/php/7.4/fpm/pool.d/www.conf
 
   db:
     image: mysql
