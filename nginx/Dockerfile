@@ -15,13 +15,10 @@ RUN apt install -y php-fpm php
 
 EXPOSE 80
 
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
-
-# RUN mkdir -p /run/php/
-# RUN touch /run/php/php7.4-fpm.sock
+RUN mkdir -p /run/php/
+RUN touch /run/php/php7.4-fpm.sock
 
 # RUN sed -i "s/^listen\.owner.*$/listen.owner = nginx/" /etc/php/7.4/fpm/pool.d/www.conf
 # RUN sed -i  "s/^listen\.group.*$/listen.group = nginx/" /etc/php/7.4/fpm/pool.d/www.conf
 
-
-#CMD ["/sbin/entrypoint.sh"]
+CMD ["/sbin/entrypoint.sh"]

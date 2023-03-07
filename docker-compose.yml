@@ -6,4 +6,4 @@ services:
       - 80:80
     volumes:
       - ./html:/app/html
-      - .nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
