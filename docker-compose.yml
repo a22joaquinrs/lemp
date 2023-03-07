@@ -6,6 +6,8 @@ services:
       - 80:80
     volumes:
       - ./html:/app/html
+      - ./drupal:/app/drupal
+      - ./nginx/drupal.conf:/etc/nginx/conf.d/drupal.conf
       - ./nginx/sitio2.conf:/etc/nginx/conf.d/sitio2.conf
       - ./nginx/www.conf:/etc/php/7.4/fpm/pool.d/www.conf
       - ./nginx/entrypoint.sh:/sbin/entrypoint.sh
@@ -14,4 +16,18 @@ services:
     build: php
     volumes:
       - ./html:/app/html
+      - ./drupal:/app/drupal
       - ./php/www.conf:/etc/php/8.2/fpm/pool.d/www.conf
+
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD: abc123.
+      - MYSQL_DATABASE: dblemp
+      - MYSQL_USER: user
+      - MYSQL_PASSWORD: abc123.
+    volumes:
+      - basedatos:/var/lib/mysql
+
+volumes:
+  basedatos:
