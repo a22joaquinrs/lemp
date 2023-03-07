@@ -4,6 +4,7 @@ services:
     build: nginx
     ports:
       - 80:80
+      - 443:443
     volumes:
       - ./html:/app/html
       - ./drupal:/app/drupal
@@ -11,6 +12,7 @@ services:
       - ./nginx/sitio2.conf:/etc/nginx/conf.d/sitio2.conf
       - ./nginx/www.conf:/etc/php/7.4/fpm/pool.d/www.conf
       - ./nginx/entrypoint.sh:/sbin/entrypoint.sh
+      - ./certs:/certs
 
   php:
     build: php

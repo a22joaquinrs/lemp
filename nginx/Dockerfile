@@ -14,6 +14,7 @@ RUN apt update && apt install nginx
 RUN apt install -y php-fpm php
 
 EXPOSE 80
+EXPOSE 443
 
 RUN mkdir -p /run/php/
 RUN touch /run/php/php7.4-fpm.sock
