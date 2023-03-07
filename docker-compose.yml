@@ -9,3 +9,6 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
       - ./nginx/www.conf:/etc/php/7.4/fpm/pool.d/www.conf
       - ./nginx/entrypoint.sh:/sbin/entrypoint.sh
+
+  php:
+    build: php
