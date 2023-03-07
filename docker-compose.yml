@@ -6,10 +6,8 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./html:/app/html
       - ./drupal:/app/drupal
       - ./nginx/drupal.conf:/etc/nginx/conf.d/drupal.conf
-      - ./nginx/sitio2.conf:/etc/nginx/conf.d/sitio2.conf
       - ./nginx/www.conf:/etc/php/7.4/fpm/pool.d/www.conf
       - ./nginx/entrypoint.sh:/sbin/entrypoint.sh
       - ./certs:/certs
@@ -17,7 +15,6 @@ services:
   php:
     build: php
     volumes:
-      - ./html:/app/html
       - ./drupal:/app/drupal
       - ./php/www.conf:/etc/php/8.2/fpm/pool.d/www.conf
 
