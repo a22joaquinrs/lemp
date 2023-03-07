@@ -13,4 +13,5 @@ services:
   php:
     build: php
     volumes:
+      - ./html:/app/html
       - ./php/www.conf:/etc/php/8.2/fpm/pool.d/www.conf
