@@ -18,7 +18,4 @@ EXPOSE 80
 RUN mkdir -p /run/php/
 RUN touch /run/php/php7.4-fpm.sock
 
-# RUN sed -i "s/^listen\.owner.*$/listen.owner = nginx/" /etc/php/7.4/fpm/pool.d/www.conf
-# RUN sed -i  "s/^listen\.group.*$/listen.group = nginx/" /etc/php/7.4/fpm/pool.d/www.conf
-
 CMD ["/sbin/entrypoint.sh"]
