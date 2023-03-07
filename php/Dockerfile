@@ -13,4 +13,6 @@ RUN apt update && apt install -y php8.2-fpm
 RUN mkdir -p /run/php/
 RUN touch /run/php/php8.2-fpm.sock
 
+EXPOSE 9000
+
 CMD ["/usr/sbin/php-fpm8.2", "-F"] 
